@@ -1,12 +1,11 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ *Done By Karl Butler
+ *for Mr.Kaune's Class
+ *to calculate the pizza size and price
  */
 
-/**
+/*
  *
- * @author kabut2496
  */
 public class buyingPizza extends javax.swing.JFrame {
 
@@ -32,10 +31,15 @@ public class buyingPizza extends javax.swing.JFrame {
         outPut = new javax.swing.JLabel();
         askSize = new javax.swing.JLabel();
         pizzaSize = new javax.swing.JTextField();
+        subtotalLable = new javax.swing.JLabel();
         outPut2 = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        taxesLable = new javax.swing.JLabel();
+        outPut3 = new javax.swing.JLabel();
+        totalLable = new javax.swing.JLabel();
+        outPut4 = new javax.swing.JLabel();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,6 +60,12 @@ public class buyingPizza extends javax.swing.JFrame {
                 pizzaSizeActionPerformed(evt);
             }
         });
+
+        subtotalLable.setText("Subtotal:");
+
+        taxesLable.setText("Taxes:");
+
+        totalLable.setText("Total:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -78,13 +88,21 @@ public class buyingPizza extends javax.swing.JFrame {
                         .addComponent(pizzaSize, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)))
                 .addGap(51, 51, 51))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(outPut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(totalLable)
+                    .addComponent(taxesLable)
+                    .addComponent(subtotalLable))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(outPut3, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                    .addComponent(outPut2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(outPut4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(outPut2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(outPut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(20, 20, 20))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,20 +115,30 @@ public class buyingPizza extends javax.swing.JFrame {
                     .addComponent(pizzaSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(buyPizzaButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(outPut, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(subtotalLable, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(outPut2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(outPut2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(taxesLable, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(totalLable))
+                    .addComponent(outPut3, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(outPut4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 41, Short.MAX_VALUE))
         );
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
+        jMenu3.setText("File");
+        jMenuBar2.add(jMenu3);
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        jMenu4.setText("Edit");
+        jMenuBar2.add(jMenu4);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -123,28 +151,53 @@ public class buyingPizza extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void buyPizzaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyPizzaButtonActionPerformed
-        double size;
-        size=Double.parseDouble(pizzaSize.getText());
+       //variables
+        double size,price,tax,total;
         
+        price=0.50*Double.parseDouble(pizzaSize.getText());
+        size=Double.parseDouble(pizzaSize.getText());
+        tax=price*0.13;
+
+       tax=tax*100;
+       tax=Math.round(tax);
+       tax=tax/100;
+       
+       total=tax+price;
+       
+        
+        //if statments 
         if(size>=40){
-        outPut.setText("you will need a truck to get this home");
-        outPut2.setText("and it will cost $15 + $1.95 as taxes in total that is 16.95$ ");
+            outPut.setText("you will need a truck to get this home");
+            outPut2.setText("$"+price);
+            outPut3.setText("$"+tax);
+            outPut4.setText("$"+total);
         }else if (size>=20){
-        outPut.setText("wow this is masive");
-        outPut2.setText("and it will be $10 + $1.30 as taxes in total that is $11.30");
+            outPut.setText("wow this is masive");
+            outPut2.setText("$"+price);
+            outPut3.setText("$"+tax);
+            outPut4.setText("$"+total);
         }else if (size>=15){
-        outPut.setText("well you can't have a pizza that size");
-        outPut2.setText("and it will be $3 for being anoying");
+            outPut.setText("well you can't have a pizza that size");
+            outPut2.setText("$"+price);
+            outPut3.setText("$"+tax);
+            outPut4.setText("$"+total);
         }else if (size<15&&size>=1){
-        outPut.setText("We are going to make you a cute little pizza");
-        outPut2.setText("and it will be $5 + $0.65 as taxes in total that is $5.65");
+            outPut.setText("We are going to make you a cute little pizza");
+            outPut2.setText("$"+price);
+            outPut3.setText("$"+tax);
+            outPut4.setText("$"+total);
+        }else if(size<0){
+            outPut.setText("Mr.Kaune stop trying to break it");
+            outPut2.setText("       ");
         }
     }//GEN-LAST:event_buyPizzaButtonActionPerformed
 
@@ -191,12 +244,17 @@ public class buyingPizza extends javax.swing.JFrame {
     private javax.swing.JLabel Tittal;
     private javax.swing.JLabel askSize;
     private javax.swing.JButton buyPizzaButton;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel outPut;
     private javax.swing.JLabel outPut2;
+    private javax.swing.JLabel outPut3;
+    private javax.swing.JLabel outPut4;
     private javax.swing.JTextField pizzaSize;
+    private javax.swing.JLabel subtotalLable;
+    private javax.swing.JLabel taxesLable;
+    private javax.swing.JLabel totalLable;
     // End of variables declaration//GEN-END:variables
 }
